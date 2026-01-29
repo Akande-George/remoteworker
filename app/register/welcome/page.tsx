@@ -104,12 +104,7 @@ const Page = () => {
 
         {/* Buttons */}
         <div className="grid grid-cols-2 gap-4 pt-8">
-          <Button
-            className="px-16"
-            onClick={() => router.push("/register/onboarding")}
-          >
-            Get started
-          </Button>
+          <Button className="px-16">Get started</Button>
           <Button
             className="px-18"
             variant="outline"
