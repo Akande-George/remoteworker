@@ -1,0 +1,46 @@
+import React from "react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+const routeTitles: Record<string, string> = {
+  "/": "Dashboard",
+  "/career-tools": "Tools",
+  "/jobs": "Job Board",
+  "/applications": "Applications",
+  "/courses": "Courses",
+  "/events": "Events",
+  "/community": "Community",
+  "/find-a-mentor": "Find a Mentor",
+  "/perks": "Perks",
+  "/resources": "Resources",
+  "/challenges": "Challenges",
+  "/settings": "Settings",
+  "/support": "Support",
+  // Add more routes as needed
+};
+
+const TalentTopBar = () => {
+  const pathname = usePathname();
+  const title = routeTitles[pathname] || "Dashboard";
+
+  return (
+    <div className="w-full flex justify-between items-center py-5 px-10 border-b border-[#E8E8E8] bg-white">
+      <div className="text-[18px]">{title}</div>
+      <div className="flex justify-end items-center gap-4">
+        <div className="border border-[#E8E8E8] p-2 rounded-[10px]">
+          <Image src="/search-icon.svg" alt="search" width={20} height={20} />
+        </div>
+        <div className="border border-[#E8E8E8] p-2 rounded-[10px]">
+          <Image
+            src="/bett-icon.svg"
+            alt="notification bell"
+            width={20}
+            height={20}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TalentTopBar;
