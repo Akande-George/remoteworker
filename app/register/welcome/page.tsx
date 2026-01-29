@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { motion, Variants } from "framer-motion"; // 1. Import Variants type
+import { motion, Variants } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 const features = [
@@ -13,7 +13,6 @@ const features = [
   "Generate daily tasks to make you succeed",
 ];
 
-// 2. Apply the 'Variants' type to your animation objects
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -37,12 +36,12 @@ const Page = () => {
   const router = useRouter();
 
   return (
-    <div className="">
+    <div className="px-4">
       <div className="flex justify-between items-center border-b border-[#E8E8E8] pb-6">
         <Image src={`/logo.svg`} width={101} height={32.15} alt="logo" />
       </div>
 
-      <section className="w-[500px] mx-auto pt-24">
+      <section className="w-full max-w-[500px] mx-auto pt-16 md:pt-24">
         {/* Header Icon */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -59,11 +58,11 @@ const Page = () => {
         </motion.div>
 
         {/* Text Content */}
-        <div className="sora-semibold text-[24px] md:text-[32px] leading-[32px] md:leading-[40px] pt-8 text-[#161A21] text-center">
+        <div className="sora-semibold text-[22px] md:text-[32px] leading-[32px] md:leading-[40px] pt-8 text-[#161A21] text-center">
           Welcome to Remote Work
           <span className="sora-semibold text-[#E9358F]">her</span>!
         </div>
-        <div className="text-center text-[#6A6D71] text-[16px] mt-2">
+        <div className="text-center text-[#6A6D71] text-[15px] md:text-[16px] mt-2">
           Hey Adeife! 🎉 Let’s personalize your experience.
         </div>
 
@@ -92,21 +91,23 @@ const Page = () => {
                   height={24}
                   alt="box check"
                 />
-                <div className="text-[#161A21] text-[16px]">{text}</div>
+                <div className="text-[#161A21] text-[15px] md:text-[16px]">
+                  {text}
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        <div className="text-center text-[#6A6D71] text-[14px] mt-6">
+        <div className="text-center text-[#6A6D71] text-[13px] md:text-[14px] mt-6">
           This takes 3-5 minutes
         </div>
 
         {/* Buttons */}
-        <div className="grid grid-cols-2 gap-4 pt-8">
-          <Button className="px-16">Get started</Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-8">
+          <Button className="w-full">Get started</Button>
           <Button
-            className="px-18"
+            className="w-full"
             variant="outline"
             onClick={() => router.push("/")}
           >
