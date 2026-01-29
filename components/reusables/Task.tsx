@@ -8,7 +8,7 @@ const Task = () => {
       <section className="flex justify-start gap-3">
         <Checkbox />
         <div className="grid grid-cols-1 md:grid-cols-7">
-          <div className="md:col-span-6 md:w-[90%]">
+          <div className="md:col-span-6 md:w-[90%] space-y-3 md:space-y-0">
             <div className="flex justify-start items-center gap-2">
               <div className="text-[#E16614] text-[12px] bg-[#FFF3EB] rounded-full px-2 mori-semibold">
                 URGENT
@@ -35,7 +35,7 @@ const Task = () => {
               recruiters.
             </div>
           </div>
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 py-4 md:py-0">
             <Button className="px-3">
               Optimize resume
               <Image

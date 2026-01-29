@@ -28,7 +28,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ plan, onSelect }) => (
       plan.tag === "recommended"
         ? "border-4 border-[#E9358F]"
         : "border border-[#E8E8E8]"
-    } px-4 py-10 rounded-[10px] h-full`}
+    } px-4 py-10 rounded-[10px] h-full bg-white`}
     style={{ minHeight: 500 }}
   >
     {plan.tag === "recommended" && (
@@ -123,7 +123,7 @@ const PricingTab = () => {
   const renderPlans = (period: "monthly" | "quarterly" | "yearly") => {
     if (!plans || !plans[period]) return null;
     return (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {plans[period].map((plan: Plan) => (
           <PriceCard key={plan.uid} plan={plan} onSelect={handleSelectPlan} />
         ))}
@@ -133,15 +133,17 @@ const PricingTab = () => {
 
   return (
     <div className="flex justify-center">
-      <Tabs defaultValue="monthly" className="w-[1140px]">
-        <TabsList className="flex justify-center items-center mx-auto w-fit">
-          <TabsTrigger value="monthly" className="px-8">
+      <Tabs defaultValue="monthly" className="w-full max-w-[1140px] px-2">
+        <TabsList className="flex justify-center items-center mx-auto w-fit flex-wrap gap-2">
+          <TabsTrigger value="monthly" className="px-4 md:px-8">
             Monthly
           </TabsTrigger>
-          <TabsTrigger value="quarterly" className="px-8">
+          <TabsTrigger value="quarterly" className="px-4 md:px-8">
             Quarterly
           </TabsTrigger>
-          <TabsTrigger value="yearly">Yearly (Save 5%)</TabsTrigger>
+          <TabsTrigger value="yearly" className="px-4 md:px-8">
+            Yearly (Save 5%)
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="monthly" className="pt-10">
           <section>{isLoading ? <Loader /> : renderPlans("monthly")}</section>

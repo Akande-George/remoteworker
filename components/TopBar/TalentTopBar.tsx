@@ -19,13 +19,28 @@ const routeTitles: Record<string, string> = {
   // Add more routes as needed
 };
 
-const TalentTopBar = () => {
+const TalentTopBar = ({
+  onToggleSidebar,
+}: {
+  onToggleSidebar?: () => void;
+}) => {
   const pathname = usePathname();
   const title = routeTitles[pathname] || "Dashboard";
 
   return (
-    <div className="w-full flex justify-between items-center py-5 px-10 border-b border-[#E8E8E8] bg-white">
-      <div className="text-[18px]">{title}</div>
+    <div className="w-full flex justify-between items-center py-5 px-4 md:px-10 border-b border-[#E8E8E8] bg-white">
+      <div className="flex justify-start items-center gap-4">
+        <button
+          type="button"
+          onClick={onToggleSidebar}
+          className="focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <Image src="/hamburger.svg" alt="logo" width={40} height={40} />
+        </button>
+        <div className="text-[18px]">{title}</div>
+      </div>
+
       <div className="flex justify-end items-center gap-4">
         <div className="border border-[#E8E8E8] p-2 rounded-[10px]">
           <Image src="/search-icon.svg" alt="search" width={20} height={20} />

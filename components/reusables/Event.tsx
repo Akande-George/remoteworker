@@ -14,10 +14,10 @@ const Event = () => {
       {data?.events.data.map((event) => (
         <div
           key={event.uid}
-          className="flex justify-between border border-[#E8E8E8] p-3 rounded-[12px] mb-3"
+          className="flex flex-col sm:flex-row justify-between border border-[#E8E8E8] p-3 rounded-[12px] mb-3 gap-3"
         >
-          <div className="flex justify-start gap-3">
-            <div className="bg-[#F7F0FC] rounded-[10px] p-2 h-[40px]">
+          <div className="flex flex-row sm:flex-row justify-start gap-3">
+            <div className="bg-[#F7F0FC] rounded-[10px] p-2 h-[40px] flex items-center justify-center">
               <Image
                 src={event.image || `/gift-line-purple.svg`}
                 width={24}
@@ -32,7 +32,7 @@ const Event = () => {
               <div className="text-[#6A6D71] text-[14px]">
                 {event.location || event.city}
               </div>
-              <div className="flex justify-start items-center gap-2">
+              <div className="flex flex-wrap justify-start items-center gap-2">
                 <div className="flex justify-start items-center gap-1">
                   <Image
                     src={`/calendar-line.svg`}
@@ -67,7 +67,7 @@ const Event = () => {
               </div>
             </div>
           </div>
-          <div className="text-[#E9358F] sora-semibold text-[16px]">
+          <div className="text-[#E9358F] sora-semibold text-[16px] mt-2 sm:mt-0 sm:self-center">
             ₦{event.member_price.toLocaleString()}
           </div>
         </div>

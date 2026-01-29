@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const BecomeATalent = () => {
   return (
-    <div className="bg-[#FFF3EB] border border-[#FFE6D5] p-5 rounded-[16px] flex justify-between items-center">
+    <div className="bg-[#FFF3EB] border border-[#FFE6D5] p-5 rounded-[16px] md:flex md:justify-between md:items-center space-y-3 md:space-y-0">
       <div className="flex justify-start items-center gap-4">
         <div className="bg-[#FFE6D5] p-2 rounded-[10px]">
           <Image
@@ -23,7 +23,7 @@ const BecomeATalent = () => {
           </div>
         </div>
       </div>
-      <Button className="bg-[#FA7319] hover:bg-[#FA7319]/80">
+      <Button className="bg-[#FA7319] w-full md:w-[126px] hover:bg-[#FA7319]/80">
         Apply Now{" "}
         <Image
           src={`/apply-icon.svg`}

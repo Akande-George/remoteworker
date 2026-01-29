@@ -20,24 +20,24 @@ const career: MenuItemType[] = [
   {
     label: "Career Tools",
     icon: "/career-tools-icon.svg",
-    href: "/career",
+    href: "/career-tools",
   },
   {
     label: "Job Board",
     icon: "/job-icon.svg",
-    href: "/jobs",
+    href: "#",
     soon: true, // Set soon to true
   },
   {
     label: "Applications",
     icon: "/application-icon.svg",
-    href: "/applications",
+    href: "#",
     soon: true, // Set soon to true
   },
   {
     label: "Courses",
     icon: "/courses-icon.svg",
-    href: "/courses",
+    href: "#",
   },
 ];
 const community: MenuItemType[] = [
@@ -49,12 +49,12 @@ const community: MenuItemType[] = [
   {
     label: "Community",
     icon: "/community-icon.svg",
-    href: "/community",
+    href: "#",
   },
   {
     label: "Find a Mentor",
     icon: "/mentor-icon.svg",
-    href: "/find-a-mentor",
+    href: "#",
     soon: true,
   },
 ];
@@ -62,17 +62,17 @@ const resources: MenuItemType[] = [
   {
     label: "Perks",
     icon: "/perks-icon.svg",
-    href: "/perks",
+    href: "#",
   },
   {
     label: "Resources",
     icon: "/resources-icon.svg",
-    href: "/resources",
+    href: "#",
   },
   {
     label: "Challenges",
     icon: "/challenges-icon.svg",
-    href: "/challenges",
+    href: "#",
     soon: true,
   },
 ];
@@ -80,12 +80,12 @@ const others: MenuItemType[] = [
   {
     label: "Settings",
     icon: "/settings-icon.svg",
-    href: "/settings",
+    href: "#",
   },
   {
     label: "Support",
     icon: "/support-icon.svg",
-    href: "/support",
+    href: "#",
   },
 ];
 

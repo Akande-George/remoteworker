@@ -10,7 +10,7 @@ const Tasks = () => {
         boxShadow: "0px 1px 2px 0px #0A0D1408",
       }}
     >
-      <section className="flex justify-between items-center">
+      <section className="md:flex md:justify-between md:items-center">
         <div className="flex justify-start items-center gap-2">
           <Image src={`/focus-icon.svg`} width={24} height={24} alt="focus" />
           <div className="text-[#161A21] mori-semibold text-[16px]">

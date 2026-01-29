@@ -229,9 +229,15 @@ const Page = () => {
     <div className="">
       <Script src="https://js.paystack.co/v2/inline.js" strategy="lazyOnload" />
 
-      <div className="flex justify-between items-center border-b border-[#E8E8E8] pb-6">
-        <Image src={`/logo.svg`} width={101} height={32.15} alt="logo" />
-        <div className="text-[#161A21] text-[16px]">
+      <div className="flex justify-between md:items-center border-b border-[#E8E8E8] pb-6 md:px-6 pt-6">
+        <Image
+          src={`/logo.svg`}
+          width={101}
+          height={32.15}
+          className="w-[90px] md:w-[101]"
+          alt="logo"
+        />
+        <div className="text-[#161A21] text-[14px] md:text-[16px] text-center md:text-right">
           Already have an account?{" "}
           <Link href={"/login"} className="text-[#E9358F] underline">
             Sign In

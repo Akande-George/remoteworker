@@ -8,7 +8,7 @@ export default function SubscribeLayout({
 }>) {
   return (
     <div>
-      <div className="max-w-[1440px] mx-auto p-8">{children}</div>
+      <div className="max-w-[1440px] mx-auto p-4 md:p-8">{children}</div>
     </div>
   );
 }

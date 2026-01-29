@@ -8,7 +8,7 @@ export default function EventsLayout({
 }>) {
   return (
     <div>
-      <div className="max-w-[1440px] mx-auto p-4">{children}</div>
+      <div className="max-w-[1440px] mx-auto py-4">{children}</div>
     </div>
   );
 }
