@@ -49,14 +49,7 @@ export default function RootLayout({
                   />
                 )}
                 {/* Main content */}
-                <div
-                  className="flex-1 flex flex-col min-h-screen transition-all duration-300"
-                  style={{
-                    marginLeft: sidebarOpen ? "80vw" : "0",
-                    // On desktop, always leave space for sidebar
-                    ...(window.innerWidth >= 768 ? { marginLeft: 275 } : {}),
-                  }}
-                >
+                <div className="flex-1 flex flex-col min-h-screen transition-all duration-300 md:ml-[275px]">
                   <div className="fixed left-0 md:left-[275px] top-0 right-0 z-20 w-full">
                     <TalentTopBar onToggleSidebar={handleToggleSidebar} />
                   </div>

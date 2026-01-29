@@ -33,7 +33,7 @@ const TalentTopBar = ({
         <button
           type="button"
           onClick={onToggleSidebar}
-          className="focus:outline-none"
+          className="focus:outline-none md:hidden"
           aria-label="Toggle menu"
         >
           <Image src="/hamburger.svg" alt="logo" width={40} height={40} />
