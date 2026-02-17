@@ -31,7 +31,7 @@ const ToolCard: React.FC<ToolCardProps> = ({
         <div className="mori-semibold text-[#161A21] text-[16px]">{name}</div>
         <div className="text-[14px] text-[#6A6D71]">{description}</div>
       </div>
-      <Button className="w-full" variant="outline" asChild>
+      <Button className="w-full h-[42px]" variant="outline" asChild>
         <a href={url}>
           Open
           <span className="ml-2">

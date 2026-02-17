@@ -22,8 +22,11 @@ export default function RootLayout({
     pathname.startsWith("/subscribe");
 
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
+  const [isCollapsed, setIsCollapsed] = React.useState(false);
 
   const handleToggleSidebar = () => setSidebarOpen((prev) => !prev);
+
+  const sidebarWidth = isCollapsed ? 80 : 275;
 
   return (
     <html lang="en">
@@ -34,12 +37,12 @@ export default function RootLayout({
               <>
                 {/* Sidebar */}
                 <div
-                  className={`fixed left-0 top-0 h-full z-30 transition-transform duration-300 bg-white
-                    w-[80vw] max-w-[275px] md:w-[275px] 
-                    ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+                  className={`fixed left-0 top-0 h-full z-30 transition-all duration-300 bg-white
+                    ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0
                   `}
+                  style={{ width: `${sidebarWidth}px` }}
                 >
-                  <MenuSidebar />
+                  <MenuSidebar onCollapseChange={setIsCollapsed} />
                 </div>
                 {/* Overlay for mobile */}
                 {sidebarOpen && (
@@ -49,8 +52,20 @@ export default function RootLayout({
                   />
                 )}
                 {/* Main content */}
-                <div className="flex-1 flex flex-col min-h-screen transition-all duration-300 md:ml-[275px]">
-                  <div className="fixed left-0 md:left-[275px] top-0 right-0 z-20 w-full">
+                <div
+                  className="flex-1 flex flex-col min-h-screen transition-all duration-300 ml-0"
+                  style={{
+                    marginLeft:
+                      window.innerWidth >= 768 ? `${sidebarWidth}px` : "0",
+                  }}
+                >
+                  <div
+                    className="fixed top-0 right-0 z-20 w-full transition-all duration-300 md:left-auto"
+                    style={{
+                      left:
+                        window.innerWidth >= 768 ? `${sidebarWidth}px` : "0",
+                    }}
+                  >
                     <TalentTopBar onToggleSidebar={handleToggleSidebar} />
                   </div>
                   <main className="flex-1 pt-[80px] p-4">{children}</main>

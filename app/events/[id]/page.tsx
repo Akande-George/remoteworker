@@ -102,7 +102,7 @@ const Page = () => {
                 {event.title}
               </div>
               <div className="flex justify-start items-center gap-2">
-                <div className="mori-semibold text-[#E9358F] text-[16px]">
+                <div className="mori-semibold text-[#322FEB] text-[16px]">
                   ₦{event.member_price.toLocaleString()}
                 </div>
                 <div className="text-[#161A21] text-[14px] line-through">
@@ -173,7 +173,7 @@ const Page = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="text-[#161A21] text-[14px]">Member Price</div>
-                  <div className="mori-semibold text-[#E9358F] text-[18px]">
+                  <div className="mori-semibold text-[#322FEB] text-[18px]">
                     ₦{event.member_price.toLocaleString()}
                   </div>
                 </div>

@@ -5,9 +5,9 @@ import { Button } from "../ui/button";
 
 const TokensCard = () => {
   return (
-    <div className="bg-[#FFF3F9] border border-[#FCBCDB] p-4 rounded-[16px] md:flex md:justify-between md:items-center space-y-3 md:space-y-0 gap-4">
+    <div className="bg-[#F6F3FF] border border-[#C3BCFC] p-4 rounded-[16px] md:flex md:justify-between md:items-center space-y-3 md:space-y-0 gap-4">
       <div className="flex">
-        <div className="p-3 rounded-[10px] bg-[#FEE9F3]">
+        <div className="p-3 rounded-[10px] bg-[#EFE9FE]">
           <Image
             src={`/token-icon.svg`}
             width={24}
@@ -16,10 +16,10 @@ const TokensCard = () => {
           />
         </div>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 space-y-2">
         <div className="flex justify-start items-center gap-2">
-          <div className="sora-semibold text-[#161A21] text-[24px]">150</div>
-          <div className="text-[14px] text-[#68123D]">AI Tokens</div>
+          <div className="sora-semibold text-[#161A21] text-[24px]">25/150</div>
+          <div className="text-[14px] text-[#151268]">AI Tokens</div>
         </div>
         <TrackBar progress={10} />
       </div>

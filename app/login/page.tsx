@@ -63,7 +63,7 @@ const Page = () => {
       <form className="space-y-7" onSubmit={handleSubmit}>
         <div className="space-y-1">
           <Label htmlFor="email" className="text-[#161A21] text-[14px]">
-            Email Address*
+            Email Address
           </Label>
           <Input
             id="email"
@@ -76,7 +76,7 @@ const Page = () => {
         </div>
         <div className="space-y-1">
           <Label htmlFor="password" className="text-[#161A21] text-[14px]">
-            Password*
+            Password
           </Label>
           <div className="relative">
             <Input
@@ -108,16 +108,14 @@ const Page = () => {
           <div className="text-red-500 text-sm font-medium">{error}</div>
         )}
 
-        <div className="text-[#6A6D71] text-[14px]">
-          Forgot password?{" "}
+        <div className="text-[#335CFF] text-[14px]">
           <Link
             href="/forgot-password"
-            className="text-[#161A21] underline cursor-pointer"
+            className="text-[#335CFF] text-[14px] mori-semibold cursor-pointer"
           >
-            Reset it
+            Forgot your password?{" "}
           </Link>
         </div>
-
         <div>
           <Button
             className="w-full"
@@ -130,7 +128,7 @@ const Page = () => {
 
         <div className="text-center text-[14px] text-[#6A6D71]">
           Doesn’t have an account?{" "}
-          <Link href={`/subscribe`} className="text-[#E9358F] underline">
+          <Link href={`/subscribe`} className="text-[#322FEB] underline">
             Sign Up
           </Link>
         </div>

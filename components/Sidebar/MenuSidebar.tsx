@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import NameCard from "../reusables/NameCard";
 import MenuItem from "../reusables/MenuItem";
+import { Button } from "../ui/button";
+import Image from "next/image";
 
 type MenuItemType = {
   label: string;
@@ -23,18 +26,6 @@ const career: MenuItemType[] = [
     href: "/career-tools",
   },
   {
-    label: "Job Board",
-    icon: "/job-icon.svg",
-    href: "#",
-    soon: true, // Set soon to true
-  },
-  {
-    label: "Applications",
-    icon: "/application-icon.svg",
-    href: "#",
-    soon: true, // Set soon to true
-  },
-  {
     label: "Courses",
     icon: "/courses-icon.svg",
     href: "#",
@@ -47,15 +38,9 @@ const community: MenuItemType[] = [
     href: "/events",
   },
   {
-    label: "Community",
+    label: "Partner Match",
     icon: "/community-icon.svg",
     href: "#",
-  },
-  {
-    label: "Find a Mentor",
-    icon: "/mentor-icon.svg",
-    href: "#",
-    soon: true,
   },
 ];
 const resources: MenuItemType[] = [
@@ -71,95 +56,104 @@ const resources: MenuItemType[] = [
   },
   {
     label: "Challenges",
-    icon: "/challenges-icon.svg",
-    href: "#",
-    soon: true,
-  },
-];
-const others: MenuItemType[] = [
-  {
-    label: "Settings",
-    icon: "/settings-icon.svg",
-    href: "#",
-  },
-  {
-    label: "Support",
-    icon: "/support-icon.svg",
+    icon: "/challenge-icon.svg",
     href: "#",
   },
 ];
+const others: MenuItemType[] = [];
 
-const MenuSidebar = () => {
+const MenuSidebar = ({
+  onCollapseChange,
+}: {
+  onCollapseChange?: (collapsed: boolean) => void;
+}) => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const handleToggleCollapse = () => {
+    const newCollapsedState = !isCollapsed;
+    setIsCollapsed(newCollapsedState);
+    onCollapseChange?.(newCollapsedState);
+  };
+
   return (
-    <div className="w-[272px] p-4 border-r border-[#E8E8E8] h-screen">
-      <div>
-        <NameCard />
+    <div className="border-r border-[#E8E8E8] h-screen flex flex-col relative transition-all duration-300 w-full">
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div
+          className={`${isCollapsed ? "px-2" : "p-4"} transition-all duration-300`}
+        >
+          <NameCard isCollapsed={isCollapsed} />
+        </div>
+        <div
+          className={`flex-1 overflow-y-auto ${isCollapsed ? "px-2" : "pr-4"} py-4 transition-all duration-300`}
+        >
+          {mainMenu.map((item) => (
+            <MenuItem
+              key={item.label}
+              label={item.label}
+              icon={item.icon}
+              href={item.href}
+              isCollapsed={isCollapsed}
+            />
+          ))}
+          {career.map((item) => (
+            <MenuItem
+              key={item.label}
+              label={item.label}
+              icon={item.icon}
+              href={item.href}
+              soon={item.soon}
+              isCollapsed={isCollapsed}
+            />
+          ))}
+          {community.map((item) => (
+            <MenuItem
+              key={item.label}
+              label={item.label}
+              icon={item.icon}
+              href={item.href}
+              soon={item.soon}
+              isCollapsed={isCollapsed}
+            />
+          ))}
+          {resources.map((item) => (
+            <MenuItem
+              key={item.label}
+              label={item.label}
+              icon={item.icon}
+              href={item.href}
+              soon={item.soon}
+              isCollapsed={isCollapsed}
+            />
+          ))}
+          {others.map((item) => (
+            <MenuItem
+              key={item.label}
+              label={item.label}
+              icon={item.icon}
+              href={item.href}
+              soon={item.soon}
+              isCollapsed={isCollapsed}
+            />
+          ))}
+        </div>
       </div>
-      <div className="py-4 h-[calc(100vh-112px)] overflow-y-auto">
-        <div className="flex justify-center items-center pb-3">
-          <div className="text-[#95969A] text-[12px]">MAIN</div>
-          <div className="w-[232px] h-[1px] bg-[#E8E8E8] my-3"></div>
-        </div>
-        {mainMenu.map((item) => (
-          <MenuItem
-            key={item.label}
-            label={item.label}
-            icon={item.icon}
-            href={item.href}
+      <div className="absolute right-1 top-[30%] z-10">
+        <Button
+          variant="outline"
+          className="px-1 py-1 h-[30px] bg-white shadow-sm"
+          onClick={handleToggleCollapse}
+        >
+          <Image
+            src={`/compact.svg`}
+            width={3}
+            height={11}
+            alt="compact"
+            style={{
+              transform: isCollapsed ? "rotate(180deg)" : "rotate(0deg)",
+              transition: "transform 0.3s",
+            }}
           />
-        ))}
-        <div className="flex justify-center items-center py-3">
-          <div className="text-[#95969A] text-[12px]">CAREER</div>
-          <div className="w-[232px] h-[1px] bg-[#E8E8E8] my-3"></div>
-        </div>
-        {career.map((item) => (
-          <MenuItem
-            key={item.label}
-            label={item.label}
-            icon={item.icon}
-            href={item.href}
-            soon={item.soon}
-          />
-        ))}
-        <div className="flex justify-center items-center py-3">
-          <div className="text-[#95969A] text-[12px]">COMMUNITY</div>
-          <div className="w-[232px] h-[1px] bg-[#E8E8E8] my-3"></div>
-        </div>
-        {community.map((item) => (
-          <MenuItem
-            key={item.label}
-            label={item.label}
-            icon={item.icon}
-            href={item.href}
-            soon={item.soon}
-          />
-        ))}
-        <div className="flex justify-center items-center py-3">
-          <div className="text-[#95969A] text-[12px]">RESOURCES</div>
-          <div className="w-[232px] h-[1px] bg-[#E8E8E8] my-3"></div>
-        </div>
-        {resources.map((item) => (
-          <MenuItem
-            key={item.label}
-            label={item.label}
-            icon={item.icon}
-            href={item.href}
-            soon={item.soon}
-          />
-        ))}
-        <div className="flex justify-center items-center py-3">
-          <div className="text-[#95969A] text-[12px]">OTHERS</div>
-          <div className="w-[232px] h-[1px] bg-[#E8E8E8] my-3"></div>
-        </div>
-        {others.map((item) => (
-          <MenuItem
-            key={item.label}
-            label={item.label}
-            icon={item.icon}
-            href={item.href}
-            soon={item.soon}
-          />
-        ))}
+        </Button>
       </div>
     </div>
   );

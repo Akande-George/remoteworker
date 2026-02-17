@@ -20,7 +20,7 @@ const Welcome = () => {
             {/* You can fetch and display user goal/role/salary here if available in backend */}
             Your goal: Land a{" "}
             <span className="mori-semibold">Product Designer</span> role at{" "}
-            <span className="text-[#E9358F] mori-semibold">₦200K/month</span>
+            <span className="text-[#322FEB] mori-semibold">₦200K/month</span>
           </div>
         </div>
       </div>
