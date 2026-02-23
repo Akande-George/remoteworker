@@ -26,13 +26,13 @@ const PriceCard: React.FC<PriceCardProps> = ({ plan, onSelect }) => (
   <div
     className={`relative flex flex-col border ${
       plan.tag === "recommended"
-        ? "border-4 border-[#E9358F]"
+        ? "border-4 border-[#322FEB]"
         : "border border-[#E8E8E8]"
     } px-4 py-10 rounded-[10px] h-full bg-white`}
     style={{ minHeight: 500 }}
   >
     {plan.tag === "recommended" && (
-      <div className="flex -mt-14 items-center justify-center bg-[#E9358F] rounded-full w-[130px] mx-auto px-5 py-1 gap-2 mb-4">
+      <div className="flex -mt-14 items-center justify-center bg-[#322FEB] rounded-full w-[130px] mx-auto px-5 py-1 gap-2 mb-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="13"

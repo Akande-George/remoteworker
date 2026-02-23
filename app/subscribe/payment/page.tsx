@@ -21,7 +21,7 @@ const page = () => {
         <Image src={`/logo.svg`} width={101} height={32.15} alt="logo" />
         <div className="text-[#161A21] text-[16px]">
           Already have an account?{" "}
-          <Link href={"/login"} className="text-[#E9358F] underline">
+          <Link href={"/login"} className="text-[#322FEB] underline">
             Sign In
           </Link>
         </div>

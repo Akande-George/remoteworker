@@ -16,7 +16,7 @@ const page = () => {
         />
         <div className="text-[#161A21] text-[14px] md:text-[16px] text-center md:text-right">
           Already have an account?{" "}
-          <Link href={"/login"} className="text-[#E9358F] underline">
+          <Link href={"/login"} className="text-[#322FEB] underline">
             Sign In
           </Link>
         </div>

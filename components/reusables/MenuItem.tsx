@@ -24,8 +24,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
   const [hovered, setHovered] = useState(false);
   const pathname = usePathname();
 
-  // Active if current route matches href
-  const isActive = pathname === href;
+  // Active if current route matches href or starts with href (for nested routes)
+  const isActive =
+    pathname === href || (href !== "/" && pathname.startsWith(href));
   // If soon is true, disable hover state
   const isHovered = soon ? false : hovered || isActive;
 

@@ -122,7 +122,7 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 p-4">
       <HeaderSub
         title="Career Tools"
         subtitle="AI-powered tools to help you advance your career"

@@ -79,12 +79,12 @@ const MenuSidebar = ({
     <div className="border-r border-[#E8E8E8] h-screen flex flex-col relative transition-all duration-300 w-full">
       <div className="flex-1 flex flex-col overflow-hidden">
         <div
-          className={`${isCollapsed ? "px-2" : "p-4"} transition-all duration-300`}
+          className={`${isCollapsed ? "px-2" : "px-4 pb-4 pt-2"} transition-all duration-300`}
         >
           <NameCard isCollapsed={isCollapsed} />
         </div>
         <div
-          className={`flex-1 overflow-y-auto ${isCollapsed ? "px-2" : "pr-4"} py-4 transition-all duration-300`}
+          className={`flex-1 overflow-y-auto ${isCollapsed ? "px-2 pt-2" : "pr-4"} pb-4 transition-all duration-300`}
         >
           {mainMenu.map((item) => (
             <MenuItem

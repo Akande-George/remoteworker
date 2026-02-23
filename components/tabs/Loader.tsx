@@ -14,12 +14,12 @@ const Loader: React.FC = () => (
         cx="24"
         cy="24"
         r="20"
-        stroke="#E9358F"
+        stroke="#322FEB"
         strokeWidth="6"
       />
       <path
         d="M44 24c0-11.046-8.954-20-20-20"
-        stroke="#E9358F"
+        stroke="#322FEB"
         strokeWidth="6"
         strokeLinecap="round"
       />

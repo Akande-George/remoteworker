@@ -33,7 +33,7 @@ const OnboardingFlow = () => {
   if (isFetching) {
     return (
       <div className="flex justify-center items-center h-[400px]">
-        <Loader2 className="animate-spin h-8 w-8 text-[#E9358F]" />
+        <Loader2 className="animate-spin h-8 w-8 text-[#322FEB]" />
       </div>
     );
   }

@@ -239,7 +239,7 @@ const Page = () => {
         />
         <div className="text-[#161A21] text-[14px] md:text-[16px] text-center md:text-right">
           Already have an account?{" "}
-          <Link href={"/login"} className="text-[#E9358F] underline">
+          <Link href={"/login"} className="text-[#322FEB] underline">
             Sign In
           </Link>
         </div>
@@ -247,7 +247,7 @@ const Page = () => {
       <section className="pt-10 w-full md:w-[540px] mx-auto">
         <div className="sora-semibold text-[24px] md:text-[32px] leading-[32px] md:leading-[40px] pt-8 text-[#161A21] text-center">
           Create your Remote Workher
-          <span className="sora-semibold text-[#E9358F]"> her </span>
+          <span className="sora-semibold text-[#322FEB]"> her </span>
           account
         </div>
         <form className="space-y-6 pt-10" onSubmit={handleSubmit}>
