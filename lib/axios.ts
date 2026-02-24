@@ -14,7 +14,7 @@ function getToken() {
 
 const instance = axios.create({
   baseURL: "https://api.remoteworkher.com",
-  withCredentials: false,
+  withCredentials: true,
 });
 
 // Request interceptor: attach JWT if present
